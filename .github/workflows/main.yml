@@ -13,7 +13,7 @@ jobs:
       - run: yarn install
       - run: hexo g
       - name: upload files to OSS
-      - uses: fangbinwei/aliyun-oss-website-action@v1
+        uses: fangbinwei/aliyun-oss-website-action@v1
         with:
             accessKeyId: ${{ secrets.ALI_OSS_ACCESSKEYID }}
             accessKeySecret: ${{ secrets.ALI_OSS_ACCESSKEYSECRET }}
