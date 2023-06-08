@@ -12,7 +12,7 @@ jobs:
       - run: npm install yarn
       - run: yarn install
       - run: hexo g
-      - name: upload files to OSS
+      - name: upload blog to OSS
         uses: fangbinwei/aliyun-oss-website-action@v1
         with:
             accessKeyId: ${{ secrets.ALI_OSS_ACCESSKEYID }}
@@ -20,3 +20,11 @@ jobs:
             bucket: xiaogezi-fun
             endpoint: oss-cn-beijing.aliyuncs.com
             folder: public
+      - name: upload code to OSS
+        uses: fangbinwei/aliyun-oss-website-action@v1
+        with:
+            accessKeyId: ${{ secrets.ALI_OSS_ACCESSKEYID }}
+            accessKeySecret: ${{ secrets.ALI_OSS_ACCESSKEYSECRET }}
+            bucket: xiaogezi-fun
+            endpoint: oss-cn-beijing.aliyuncs.com
+            folder: ./code
