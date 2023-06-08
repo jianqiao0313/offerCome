@@ -15,9 +15,8 @@ jobs:
       - name: upload files to OSS
       - uses: fangbinwei/aliyun-oss-website-action@v1
         with:
-          accessKeyId: ${{ secrets.ALI_OSS_ACCESSKEYID }}
-          accessKeySecret: ${{ secrets.ALI_OSS_ACCESSKEYSECRET }}
-          bucket: xiaogezi-fun
-          # use your own endpoint
-          endpoint: oss-cn-beijing.aliyuncs.com
-          folder: public
+            accessKeyId: ${{ secrets.ALI_OSS_ACCESSKEYID }}
+            accessKeySecret: ${{ secrets.ALI_OSS_ACCESSKEYSECRET }}
+            bucket: xiaogezi-fun
+            endpoint: oss-cn-beijing.aliyuncs.com
+            folder: public
