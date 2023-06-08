@@ -9,9 +9,10 @@ jobs:
         with:
           node-version: 18
       - run: npm install hexo-cli@4.3.1 -g
-      - run: npm install yarn
+      - run: npm install yarn@1.22.17
       - run: yarn install
       - run: hexo g
+      - run: mv code ./public/code
       - name: upload blog to OSS
         uses: fangbinwei/aliyun-oss-website-action@v1
         with:
@@ -20,11 +21,3 @@ jobs:
             bucket: xiaogezi-fun
             endpoint: oss-cn-beijing.aliyuncs.com
             folder: public
-      - name: upload code to OSS
-        uses: fangbinwei/aliyun-oss-website-action@v1
-        with:
-            accessKeyId: ${{ secrets.ALI_OSS_ACCESSKEYID }}
-            accessKeySecret: ${{ secrets.ALI_OSS_ACCESSKEYSECRET }}
-            bucket: xiaogezi-fun
-            endpoint: oss-cn-beijing.aliyuncs.com
-            folder: ./code
