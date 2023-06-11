@@ -8,6 +8,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
+      - run: git clone -b 4.9.0 https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly
       - run: npm install hexo-cli@4.3.1 -g
       - run: npm install yarn@1.22.17
       - run: yarn install
