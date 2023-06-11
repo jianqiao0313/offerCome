@@ -8,11 +8,15 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
+      # 下载butterfly 4.9.0版本主题           
       - run: git clone -b 4.9.0 https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly
       - run: npm install hexo-cli@4.3.1 -g
       - run: npm install yarn@1.22.17
       - run: yarn install
+      # 替换md文档 "http://localhost:3000" => "https://xiaogezi.fun/code"
+      - run: npm run replaceUrl
       - run: hexo g
+      # 静态html放到public目录，这样上传到oss上可以直接访问
       - run: mv code ./public/code
       - name: upload blog to OSS
         uses: fangbinwei/aliyun-oss-website-action@v1
