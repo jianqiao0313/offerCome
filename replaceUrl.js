@@ -27,6 +27,7 @@ const handleFile = (filePath) => {
     const file = fs.readFileSync(filePath, 'utf8');
     const replaceFile = file.replaceAll('http://localhost:3000', 'https://xiaogezi.fun/code');
     fs.writeFileSync(filePath, replaceFile)
+    console.log('文件已替换:' + filePath);
   }
 };
 
