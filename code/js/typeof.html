@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>typeof演示</title>
+  </head>
+  <style>
+    body {
+      display: inline-block;
+    }
+
+    .main {
+      width: 400px;
+    }
+  </style>
+
+  <body>
+    <div class="main"></div>
+  </body>
+</html>
+<script>
+  const MainElement = document.querySelector(".main");
+  // 创建p标签，并添加到MainElement中
+  const createPTagAndAppend = (htmlStr) => {
+    const pTag = document.createElement("p");
+    pTag.innerHTML = htmlStr;
+    MainElement.appendChild(pTag);
+  };
+  // typeof undefined => undefined
+  createPTagAndAppend("typeof(undefined): " + typeof undefined);
+  // typeof null => object
+  createPTagAndAppend("typeof(null): " + typeof null);
+  // typeof boolean => boolean
+  createPTagAndAppend("typeof(true): " + typeof true);
+  // typeof number => number
+  createPTagAndAppend("typeof(1): " + typeof 1);
+  // typeof NaN => number
+  createPTagAndAppend("typeof(NaN): " + typeof NaN)
+  // typeof bigInt => bigInt
+  createPTagAndAppend("typeof(10n): " + typeof 10n);
+  // typeof string => string
+  createPTagAndAppend('typeof("123"): ' + typeof "123");
+  // typeof symbol => symbol
+  createPTagAndAppend("typeof(Symbol(1)): " + typeof Symbol(1));
+  // typeof function => function
+  createPTagAndAppend('typeof(()=>{}): ' + typeof(()=>{}))
+  // typeof object => object
+  createPTagAndAppend('typeof({}): ' + typeof {})
+  // typeof array => object
+  createPTagAndAppend('typeof([]): ' + typeof []);
+  // typeof date => object
+  createPTagAndAppend('typeof(new Date()): '+ typeof new Date())
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>call实现</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  const MainElement = document.querySelector("body");
+  // 创建p标签，并添加到MainElement中
+  const createPTagAndAppend = (htmlStr) => {
+    const pTag = document.createElement("p");
+    pTag.innerHTML = htmlStr;
+    MainElement.appendChild(pTag);
+  };
+  Function.prototype.myCall = function(context){
+    // 如果没有context，默认用window
+    context = context || window;
+    // 把arguments转换成数组，并把第一个参数去掉，因为第一个参数是function
+    const args = [...arguments].splice(1);
+    // context上有重名，加个symbol
+    const fnName = Symbol('fnName');
+    context[fnName] = this;
+    // 保存函数返回值
+    const res = context[fnName](...args) || null;
+    // 删除方法，释放内存
+    delete context[fnName];
+    // 返回返回值
+    return res;
+  }
+  function printName(){
+    return this.name;
+  }
+  let obj = {
+    name: 'jianqiao'
+  }
+  var name = 'window'
+  let windowCallRes = printName();
+  let myCallRes = printName.myCall(obj);
+  createPTagAndAppend('printName(): ' + windowCallRes);
+  createPTagAndAppend('printName.myCall(obj): ' + myCallRes);
+</script>

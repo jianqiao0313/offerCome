@@ -27,49 +27,62 @@
       border: 1px solid #000;
     }
 
-    .flex-direction-row {
+    .justify-content-flex-start {
       display: flex;
-      flex-direction: row;
+      justify-content: flex-start;
     }
 
-    .flex-direction-row-reverse {
+    .justify-content-flex-end {
       display: flex;
-      flex-direction: row-reverse;
+      justify-content: flex-end;
     }
 
-    .flex-direction-column {
+    .justify-content-center {
       display: flex;
-      flex-direction: column;
+      justify-content: center;
     }
 
-    .flex-direction-column-reverse {
+    .justify-content-space-between {
       display: flex;
-      flex-direction: column-reverse;
+      justify-content: space-between;
+    }
+
+    .justify-content-space-around {
+      display: flex;
+      justify-content: space-around;
     }
   </style>
 
   <body>
     <div class="main">
-      <p>flex-direction-row：主轴为水平方向，起点在左端</p>
-      <div class="flex-direction-row flex-container-div">
+      <p>justify-content-flex-start：左对齐</p>
+      <div class="justify-content-flex-start flex-container-div">
         <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div>
       </div>
-      <p>flex-direction-row-reverse：主轴为水平方向，起点在右端</p>
-      <div class="flex-direction-row-reverse flex-container-div">
+      <p>justify-content-flex-end：右对齐</p>
+      <div class="justify-content-flex-end flex-container-div">
         <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div>
       </div>
-      <p>flex-direction-column：主轴为垂直方向，起点在上沿</p>
-      <div class="flex-direction-column flex-container-div">
+      <p>justify-content-center：居中</p>
+      <div class="justify-content-center flex-container-div">
         <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div>
       </div>
-      <p>flex-direction-column-reverse：主轴为垂直方向，起点在下沿</p>
-      <div class="flex-direction-column-reverse flex-container-div">
+      <p>justify-content-space-between：两端对齐，项目之间间隔相等</p>
+      <div class="justify-content-space-between flex-container-div">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+      <p>
+        justify-content-space-around：每个元素周围的间隔相等，类似于每个元素周围加了个padding
+      </p>
+      <div class="justify-content-space-around flex-container-div">
         <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div>
