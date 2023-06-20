@@ -15,17 +15,16 @@ jobs:
       - run: yarn install
       # 替换md文档 "http://localhost:3000" => "https://xiaogezi.fun/code"
       - run: npm run replaceUrl
-      - run: cat _config.yml
+      # 清理缓存
+      - run: hexo clean
       # 替换algolia的key
       - run: sed -i 's/@ALGOLIA_APPID@/{{secrets.ALGOLIA_APPID}}/g' _config.yml
       - run: sed -i 's/@ALGOLIA_APIKEY@/{{secrets.ALGOLIA_APIKEY}}/g' _config.yml
       - run: sed -i 's/@ALGOLIA_ADMIN_APIKEY@/{{secrets.ALGOLIA_ADMIN_APIKEY}}/g' _config.yml
-      - run: cat _config.yml
       # 生成静态页面
       - run: hexo g
       # algolia索引
       - run: hexo algolia
-      # 搜索
       # 静态html放到public目录，这样上传到oss上可以直接访问
       - run: mv code ./public/code
       - name: upload blog to OSS
