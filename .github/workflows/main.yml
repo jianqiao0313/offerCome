@@ -17,10 +17,12 @@ jobs:
       - run: npm run replaceUrl
       # 清理缓存
       - run: hexo clean
+      - run: cat _config.yml
       # 替换algolia的key
-      - run: sed -i 's/@ALGOLIA_APPID@/{{secrets.ALGOLIA_APPID}}/g' ./_config.yml
-      - run: sed -i 's/@ALGOLIA_APIKEY@/{{secrets.ALGOLIA_APIKEY}}/g' ./_config.yml
-      - run: sed -i 's/@ALGOLIA_ADMIN_APIKEY@/{{secrets.ALGOLIA_ADMIN_APIKEY}}/g' ./_config.yml
+      - run: sed -i 's/@ALGOLIA_APPID@/${{ secrets.ALGOLIA_APPID }}/g' _config.yml
+      - run: sed -i 's/@ALGOLIA_APIKEY@/${{ secrets.ALGOLIA_APIKEY }}/g' _config.yml
+      - run: sed -i 's/@ALGOLIA_ADMIN_APIKEY@/${{ secrets.ALGOLIA_ADMIN_APIKEY }}/g' _config.yml
+      - run: cat _config.yml
       # 生成静态页面
       - run: hexo g
       # algolia索引
