@@ -207,8 +207,8 @@ noticeOutdate:
 footer:
   owner:
     enable: true
-    since: 2020
-  custom_text:
+    since: 2023
+  custom_text: <a href="https://beian.miit.gov.cn/"><img class="icp-icon" src="https://lvjianqiao.top/img/icp.png"><span>京ICP备18045622号-3</span></a>
   copyright: true # Copyright of theme and framework
 
 # aside (側邊欄)
