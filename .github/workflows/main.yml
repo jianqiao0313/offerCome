@@ -24,6 +24,8 @@ jobs:
       # 替换valine的key
       - run: sed -i 's/@VALINE_APPID@/${{ secrets.VALINE_APPID }}/g' _config.butterfly.yml
       - run: sed -i 's/@VALINE_APPKEY@/${{ secrets.VALINE_APPKEY }}/g' _config.butterfly.yml
+      # 替换daoVoice的APPID
+      - run: sed -i 's/@DAO_VOICE_APPID@/${{ secrets.DAO_VOICE_APPID }}/g' _config.butterfly.yml
       # 生成静态页面
       - run: hexo g
       # algolia索引

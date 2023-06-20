@@ -539,8 +539,8 @@ tidio:
 # daovoice
 # http://dashboard.daovoice.io/app
 daovoice:
-  enable: false
-  app_id:
+  enable: true
+  app_id: "@DAO_VOICE_APPID@"
 
 # crisp
 # https://crisp.chat/en/
