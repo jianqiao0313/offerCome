@@ -103,3 +103,23 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+plugins:
+  - hexo-algoliasearch
+
+# algolia
+algolia:
+  appId: "@ALGOLIA_APPID@"
+  apiKey: "@ALGOLIA_APIKEY@"
+  adminApiKey: "@ALGOLIA_ADMIN_APIKEY@"
+  chunkSize: 5000
+  indexName: "offerCome"
+  fields:
+  - content:strip:truncate,0,500
+  - excerpt:strip
+  - gallery
+  - permalink
+  - photos
+  - slug
+  - tags
+  - title

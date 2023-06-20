@@ -208,7 +208,7 @@ footer:
   owner:
     enable: true
     since: 2023
-  custom_text: <a href="https://beian.miit.gov.cn/"><img class="icp-icon" src="https://lvjianqiao.top/img/icp.png"><span>京ICP备18045622号-3</span></a>
+  custom_text: <a href="https://beian.miit.gov.cn/"><img class="icp-icon" src="https://lvjianqiao.top/img/icp.png"><span>京ICP备18045622号-3</span></a><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11011102002357"><img class="icp-icon" src="https://lvjianqiao.top/img/gaba.png"><span>京公网安备 11011102002357号</span></a>
   copyright: true # Copyright of theme and framework
 
 # aside (側邊欄)
@@ -231,9 +231,9 @@ aside:
       enable: true
       icon: fab fa-github
       text: Follow Me
-      link: https://github.com/xxxxxx
+      link: https://github.com/jianqiao0313
   card_announcement:
-    enable: true
+    enable: false
     content: This is my Blog
   card_recent_post:
     enable: true
@@ -355,7 +355,7 @@ katex:
 
 # Algolia search
 algolia_search:
-  enable: false
+  enable: true
   hits:
     per_page: 6
 
