@@ -21,6 +21,9 @@ jobs:
       - run: sed -i 's/@ALGOLIA_APPID@/${{ secrets.ALGOLIA_APPID }}/g' _config.yml
       - run: sed -i 's/@ALGOLIA_APIKEY@/${{ secrets.ALGOLIA_APIKEY }}/g' _config.yml
       - run: sed -i 's/@ALGOLIA_ADMIN_APIKEY@/${{ secrets.ALGOLIA_ADMIN_APIKEY }}/g' _config.yml
+      # 替换valine的key
+      - run: sed -i 's/@VALINE_APPID@/${{ secrets.VALINE_APPID }}/g' _config.butterfly.yml
+      - run: sed -i 's/@VALINE_APPKEY@/${{ secrets.VALINE_APPKEY }}/g' _config.butterfly.yml
       # 生成静态页面
       - run: hexo g
       # algolia索引
