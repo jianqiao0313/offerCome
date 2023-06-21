@@ -15,8 +15,6 @@ jobs:
       - run: yarn install
       # 替换md文档 "http://localhost:3000" => "https://xiaogezi.fun/code"
       - run: npm run replaceUrl
-      # 清理缓存
-      - run: hexo clean
       # 替换algolia的key
       - run: sed -i 's/@ALGOLIA_APPID@/${{ secrets.ALGOLIA_APPID }}/g' _config.yml
       - run: sed -i 's/@ALGOLIA_APIKEY@/${{ secrets.ALGOLIA_APIKEY }}/g' _config.yml
@@ -26,6 +24,8 @@ jobs:
       - run: sed -i 's/@VALINE_APPKEY@/${{ secrets.VALINE_APPKEY }}/g' _config.butterfly.yml
       # 替换daoVoice的APPID
       - run: sed -i 's/@DAO_VOICE_APPID@/${{ secrets.DAO_VOICE_APPID }}/g' _config.butterfly.yml
+      # 清理缓存
+      - run: hexo clean
       # 生成静态页面
       - run: hexo g
       # algolia索引
