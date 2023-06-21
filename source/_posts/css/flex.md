@@ -1,7 +1,8 @@
 ---
 title: flex
 date: 2023-06-13 20:00:00
-tags:
+updated: 2023-06-13 20:00:00
+tags: css flex
 ---
 
 # flex-direction 属性
