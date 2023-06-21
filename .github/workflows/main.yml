@@ -40,3 +40,4 @@ jobs:
             bucket: xiaogezi-fun
             endpoint: oss-cn-beijing.aliyuncs.com
             folder: public
+            incremental: false
