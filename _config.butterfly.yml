@@ -355,7 +355,7 @@ katex:
 
 # Algolia search
 algolia_search:
-  enable: true
+  enable: false
   hits:
     per_page: 6
 
@@ -372,11 +372,11 @@ local_search:
 
 # Docsearch
 docsearch:
-  enable: false
-  appId:
-  apiKey:
-  indexName:
-  option:
+  enable: true
+  appId: "@DOC_SEARCH_APPID@"
+  apiKey: "@DOC_SEARCH_APIKEY@"
+  indexName: xiaogezi
+  option: 
 
 # Share System (分享)
 # --------------------------------------

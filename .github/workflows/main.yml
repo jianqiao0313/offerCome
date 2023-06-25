@@ -15,10 +15,13 @@ jobs:
       - run: yarn install
       # 替换md文档 "http://localhost:3000" => "https://xiaogezi.fun/code"
       - run: npm run replaceUrl
-      # 替换algolia的key
-      - run: sed -i 's/@ALGOLIA_APPID@/${{ secrets.ALGOLIA_APPID }}/g' _config.yml
-      - run: sed -i 's/@ALGOLIA_APIKEY@/${{ secrets.ALGOLIA_APIKEY }}/g' _config.yml
-      - run: sed -i 's/@ALGOLIA_ADMIN_APIKEY@/${{ secrets.ALGOLIA_ADMIN_APIKEY }}/g' _config.yml
+      # 替换algolia的key。已改为docSearch 所以注释掉
+      # - run: sed -i 's/@ALGOLIA_APPID@/${{ secrets.ALGOLIA_APPID }}/g' _config.yml
+      # - run: sed -i 's/@ALGOLIA_APIKEY@/${{ secrets.ALGOLIA_APIKEY }}/g' _config.yml
+      # - run: sed -i 's/@ALGOLIA_ADMIN_APIKEY@/${{ secrets.ALGOLIA_ADMIN_APIKEY }}/g' _config.yml
+      # 替换algolia的docSearch
+      - run: sed -i 's/@DOC_SEARCH_APPID@/${{ secrets.DOC_SEARCH_APPID }}/g' _config.butterfly.yml
+      - run: sed -i 's/@DOC_SEARCH_APIKEY@/${{ secrets.DOC_SEARCH_APIKEY }}/g' _config.butterfly.yml
       # 替换valine的key
       - run: sed -i 's/@VALINE_APPID@/${{ secrets.VALINE_APPID }}/g' _config.butterfly.yml
       - run: sed -i 's/@VALINE_APPKEY@/${{ secrets.VALINE_APPKEY }}/g' _config.butterfly.yml
@@ -28,8 +31,8 @@ jobs:
       - run: hexo clean
       # 生成静态页面
       - run: hexo g
-      # algolia索引
-      - run: hexo algolia
+      # algolia索引。已改为docSearch 所以注释掉
+      # - run: hexo algolia
       # 静态html放到public目录，这样上传到oss上可以直接访问
       - run: mv code ./public/code
       - name: upload blog to OSS
